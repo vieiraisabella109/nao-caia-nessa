@@ -1,0 +1,303 @@
+/* ==========================================================
+   NÃO CAIA NESSA! - estilo do site
+   Dica: as "variáveis" abaixo (--nome) guardam as cores num
+   lugar só. Se quiser mudar o visual, troque aqui e o site
+   inteiro muda junto.
+   ========================================================== */
+
+:root {
+  --fundo: #0f1230;          /* azul bem escuro (fundo da página) */
+  --fundo-claro: #1a1e47;    /* azul um pouco mais claro (cartões) */
+  --borda: #343a7a;          /* contorno dos cartões */
+  --texto: #f2f3ff;          /* branco levemente azulado */
+  --texto-suave: #c4c8ee;    /* texto secundário */
+  --destaque: #8b7bff;       /* roxo dos botões e títulos */
+  --destaque-forte: #a89cff; /* roxo mais claro (hover) */
+  --erro: #ffb4a2;           /* cor da mensagem de erro */
+}
+
+/* Reset básico: tira as margens padrão do navegador */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Rolagem suave quando clica no menu */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* evita o menu fixo cobrir o título */
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  font-size: 1.125rem;   /* 18px: texto maior, mais fácil de ler */
+  line-height: 1.7;      /* espaço entre linhas */
+}
+
+/* ---------- MENU DO TOPO ---------- */
+header {
+  position: sticky;      /* o menu acompanha a rolagem */
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;       /* no celular, o menu quebra de linha */
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 6vw;
+  background: var(--fundo);
+  border-bottom: 1px solid var(--borda);
+}
+
+header h2 {
+  font-size: 1.35rem;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+}
+
+nav a {
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+nav a:hover {
+  background: var(--fundo-claro);
+}
+
+/* ---------- ÁREA PRINCIPAL ---------- */
+main {
+  max-width: 1000px;     /* não deixa o conteúdo esticar demais */
+  margin: 0 auto;
+  padding: 0 6vw;
+}
+
+section {
+  padding: 72px 0;       /* respiro entre as seções */
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem); /* cresce/diminui com a tela */
+  line-height: 1.15;
+  margin: 12px 0 20px;
+}
+
+h1 span {
+  color: var(--destaque-forte);
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 28px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+/* ---------- INÍCIO ---------- */
+.inicio p {
+  max-width: 60ch;       /* linhas mais curtas = leitura mais fácil */
+  color: var(--texto-suave);
+}
+
+.etiqueta {
+  color: var(--destaque-forte);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* Botão "Quero aprender" (antes era só um link sublinhado) */
+.botao {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 28px;
+  background: var(--destaque);
+  color: #10122e;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.botao:hover {
+  background: var(--destaque-forte);
+  transform: translateY(-2px);
+}
+
+/* ---------- CARTÕES DOS GOLPES ---------- */
+.cartoes {
+  display: grid;
+  /* cria quantas colunas couberem, cada uma com no mínimo 250px */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.cartao {
+  background: var(--fundo-claro);
+  border: 1px solid var(--borda);
+  border-left: 5px solid var(--destaque); /* faixa roxa do lado */
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.cartao p {
+  color: var(--texto-suave);
+}
+
+/* ---------- LISTA DE DICAS ---------- */
+ol {
+  max-width: 60ch;
+  padding-left: 1.6rem;
+}
+
+ol li {
+  margin-bottom: 14px;
+  padding-left: 6px;
+}
+
+ol li::marker {
+  color: var(--destaque-forte);
+  font-weight: 700;
+}
+
+/* ---------- QUIZ ---------- */
+#quiz {
+  background: var(--fundo-claro);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 72px;
+}
+
+#quiz p {
+  max-width: 60ch;
+}
+
+button {
+  font: inherit;
+  font-weight: 700;
+  margin: 20px 12px 0 0;
+  padding: 12px 22px;
+  background: var(--destaque);
+  color: #10122e;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background: var(--destaque-forte);
+  transform: translateY(-2px);
+}
+
+/* Faz o atributo "hidden" do HTML sempre esconder o elemento */
+[hidden] {
+  display: none !important;
+}
+
+#progresso {
+  color: var(--destaque-forte);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#pergunta {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Botões de resposta: um embaixo do outro, largura total */
+#opcoes {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+  max-width: 640px;
+}
+
+button.opcao {
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  background: var(--fundo);
+  color: var(--texto);
+  border: 2px solid var(--borda);
+}
+
+button.opcao:hover:not(:disabled) {
+  border-color: var(--destaque);
+  background: var(--fundo);
+}
+
+button.opcao:disabled {
+  cursor: default;
+  transform: none;
+}
+
+/* Depois de responder: verde para certa, vermelho para errada */
+button.opcao.certa {
+  border-color: #8ee6b0;
+  background: #17382b;
+  color: #d8ffe8;
+}
+
+button.opcao.errada {
+  border-color: var(--erro);
+  background: #3d1f27;
+  color: #ffe3dc;
+}
+
+#feedback {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+#feedback.acertou { color: #8ee6b0; }
+#feedback.errou   { color: var(--erro); }
+
+#pontuacao {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* ---------- RODAPÉ ---------- */
+footer {
+  text-align: center;
+  padding: 36px 6vw;
+  border-top: 1px solid var(--borda);
+  color: var(--texto-suave);
+  font-size: 1rem;
+}
+
+/* ---------- ACESSIBILIDADE ---------- */
+/* Contorno visível quando navega pelo teclado (tecla Tab) */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* Respeita quem desativa animações no computador */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* ---------- CELULAR ---------- */
+@media (max-width: 600px) {
+  section { padding: 48px 0; }
+  #quiz { padding: 24px; }
+  button { display: block; width: 100%; margin-right: 0; }
+}

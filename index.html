@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Não Caia Nessa! | Segurança Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h2>🛡️ Não Caia Nessa!</h2>
+    <nav>
+      <a href="#golpes">Tipos de golpes</a>
+      <a href="#protecao">Como se proteger</a>
+      <a href="#quiz">Quiz</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="inicio">
+      <p class="etiqueta">EDUCAÇÃO E SEGURANÇA DIGITAL</p>
+      <h1>Na internet, <span>sua segurança</span> vem primeiro.</h1>
+      <p>
+        Aprenda a identificar golpes digitais, proteger seus dados
+        e navegar com mais segurança.
+      </p>
+      <a class="botao" href="#golpes">Quero aprender</a>
+    </section>
+
+    <section id="golpes">
+      <h2>Conheça os principais golpes</h2>
+      <div class="cartoes">
+        <article class="cartao">
+          <h3>📱 Golpes no WhatsApp</h3>
+          <p>Desconfie de pedidos urgentes de dinheiro e mensagens
+          que solicitam códigos de verificação.</p>
+        </article>
+
+        <article class="cartao">
+          <h3>🔗 Links falsos</h3>
+          <p>Confira o endereço do site antes de clicar ou informar
+          seus dados pessoais.</p>
+        </article>
+
+        <article class="cartao">
+          <h3>🎁 Falsas promoções</h3>
+          <p>Desconfie de ofertas boas demais e confirme a promoção
+          nos canais oficiais da empresa.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="protecao">
+      <h2>5 dicas para se proteger</h2>
+      <ol>
+        <li>Use senhas fortes e diferentes para cada conta.</li>
+        <li>Ative a autenticação em dois fatores.</li>
+        <li>Nunca compartilhe códigos de verificação.</li>
+        <li>Confirme pedidos de dinheiro por outro canal.</li>
+        <li>Não clique em links suspeitos.</li>
+      </ol>
+    </section>
+
+    <!-- QUIZ: as perguntas ficam no script.js.
+         Aqui só ficam os "espaços" que o JavaScript vai preencher. -->
+    <section id="quiz">
+      <h2>Teste seus conhecimentos</h2>
+
+      <div id="area-pergunta">
+        <p id="progresso"></p>
+        <p id="pergunta"></p>
+        <div id="opcoes"></div>
+        <p id="feedback" aria-live="polite"></p>
+        <button id="proxima" hidden>Próxima pergunta</button>
+      </div>
+
+      <div id="area-final" hidden>
+        <p id="pontuacao"></p>
+        <p id="mensagem-final"></p>
+        <button id="recomecar">Refazer o quiz</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projeto de extensão ADS — Não Caia Nessa!</p>
+    <p>Informação e prevenção contra golpes digitais.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+  
